@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>갤러리</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <nav class="header-left">
+            <a href="index.html">
+                <div id="home-logo"><img id="home" src="../sources/images/icons/free-icon-homepage.png" alt=""></div>
+            </a>    
+            <ul>
+                <li class="main-nav"><a href="self_introduction.html">자기소개</a></li>
+                <li class="main-nav"><a class="now-page" href="travel.html">갤러리</a></li>
+                <li class="main-nav"><a href="dev_roadmap.html">백엔드 로드맵</a></li>
+            </ul>
+        </nav>
+        <nav class="header-right">
+            <ul>
+                <li><a href="join_member.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+            </ul>   
+        </nav>
+    </header>
+    <hr>
+    <!-- 메인 -->
+    <div onclick="closePopup();" class="img-popup-back"></div>
+    <main class="gallery">
+        <h3 class="travel-log">2018.11 - 카타르 여행</h3>
+        <div class="section">
+            <span class="gallery-item">
+                <img onclick="imgPopup(this);" src="../sources/images/gallery/boats.jpg" alt="카타르 Dhow 항구. 작은 배들이 물 위에 떠있다.">
+            </span>
+            <span class="gallery-item">
+                <img onclick="imgPopup(this);" src="../sources/images/gallery/islamicMuseum.jpg" alt="카타르 이슬람 박물관 전경">
+            </span>
+            <span class="gallery-item">
+                <img onclick="imgPopup(this);" src="../sources/images/gallery/lights.jpg" alt="여러 색깔 유리 모자이크 장식이 된 등">
+            </span>
+            <span class="gallery-item">
+                <img onclick="imgPopup(this);" src="../sources/images/gallery/perlStreet.jpg" alt="길가에 설치된 여러 색깔 조각으로 이어진 그늘막">
+            </span>
+            <span class="gallery-item">
+                <img onclick="imgPopup(this);" src="../sources/images/gallery/pountain.jpg" alt="이슬람 박물관 분수 정원">
+            </span>
+            <span class="gallery-item">
+                <img onclick="imgPopup(this);" src="../sources/images/gallery/sign.jpg" alt="이슬람 전통의상을 입은 사람 모양이 그려진 보행자 표지판">
+            </span>
+            <span class="gallery-item">
+                <img onclick="imgPopup(this);" src="../sources/images/gallery/skyline.jpg" alt="항구 건너편의 스카이라인">
+            </span>
+            <span class="gallery-item">
+                <img onclick="imgPopup(this);" src="../sources/images/gallery/sooqStore1.jpg" alt="카타르 시장 sooq의 노점들">
+            </span>
+            <span class="gallery-item">
+                <img onclick="imgPopup(this);" src="../sources/images/gallery/sooqStore2.jpg" alt="카타르 시장 sooq의 노점">
+            </span>
+    </main>
+    <hr>
+    <footer>
+        <div class="footer-contact"><b>Email</b><br>jinpark.dev22@gmail.com</div>
+        <div class="footer-author">2022 KH 개인프로젝트 by 수진</div>
+        <div class="footer-contact"><b>gitHub</b><br>jin-dev22</div>
+        <div class="footer-copyrightWrapper">
+            <a href="icon_copyright.html">사용이미지 출처: Flaticon :
+                <span class="holders">paulalee / Freepik / wanicon</span>
+            </a>
+        </div>
+    </footer>
+    <script>
+        //배경div 전역선언
+        const background = document.querySelector(".img-popup-back");
+        /**
+         * 이미지 클릭시 배경어둡게, 원본이미지 팝업
+         */
+        function imgPopup(img){
+            const originImg = document.createElement("img");
+            originImg.src = img.src;
+            originImg.style.maxWidth = "800px"
+            originImg.style.maxHeight = "600px"
+            background.style.display = "flex";
+            background.appendChild(originImg);
+        };
+
+        /**
+         * 배경 클릭시 팝업 이미지 사라짐
+         */
+        function closePopup() {
+            background.innerHTML = "";
+            background.style.display = "none";
+        };
+    </script>
+</body>
+</html>

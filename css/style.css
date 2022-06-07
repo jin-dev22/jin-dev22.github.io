@@ -1,0 +1,501 @@
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Pen+Script&family=Noto+Sans+KR&display=swap');
+
+
+/* --------------------모든 페이지 공통-------------------- */
+body{
+    background-color: #f3f3f3;
+    width: 95%;
+    margin: 0 auto;
+}
+
+header{
+    min-height: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items:flex-end;
+}
+.header-left ul{
+    padding: 0;
+    margin-left: 20px;
+    display: flex;
+    align-items: flex-end;
+}
+
+.header-left{
+    margin-left: 20px;
+    display: flex;
+    align-items: center;
+}
+
+.header-right ul{
+    display: flex;
+    justify-content:space-around;
+    align-items: flex-end;
+    padding: 0;
+}
+
+.header-nav ul li a:hover{
+    color: grey;
+}
+
+.now-page{
+    color : orange;
+    font-family: 'Noto Sans Korean', sans-serif;
+    font-size: 18px;
+    
+}
+
+#home-logo{
+    background-color:orange;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    position: relative;
+    left: 10px
+}
+
+ img#home{
+    width: 25px;
+    position: relative;
+    top: 6px;
+    left: 8px;
+    opacity: 75%;
+}
+
+main{
+    min-height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadein 0.7s;
+}
+
+@keyframes fadein {
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
+}
+
+footer{
+    min-height: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    text-align: center;
+    row-gap: 30px;
+}
+
+.footer-contact{
+    text-align: center;
+}
+
+.footer-copyrightWrapper{
+   grid-column: 1 / 4;
+    text-align: center;
+}
+
+.footer-copyrightWrapper:hover a{
+    color: powderblue;
+}
+
+.holders{
+    font-weight: normal;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+
+li{
+    list-style: none;
+    display: inline-block;
+    margin: 0 10px;
+}
+
+fieldset{
+    border: 2px solid orange;
+    border-radius: 2%;
+}
+
+legend{
+    color: #1a355b;
+    font-weight: bold;
+}
+
+/* --------------------index.html-------------------- */
+.main-container{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.main-img-back{
+    border-radius: 50%;
+    background-color: #1a355b;
+    width: 400px;
+    height: 400px;
+    box-shadow: 3px 5px 1px black;
+    
+}
+
+#main-img{
+    width: 300px;
+    position: relative;
+    top: 35px;
+    left: 50px
+}
+
+.main-greeting{
+    display: inline-block;
+    margin-left: 80px;
+    width: 500px;
+}
+
+.main-greeting ul {
+    display: flex;
+    align-items: flex-start;
+    padding: 0;
+    margin-top: 30px;
+}
+
+.main-greeting ul li {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 2px 5px 1px black;
+}
+
+.main-greeting ul li a{
+    color: whitesmoke;
+}
+
+.main-greeting ul li:hover{
+    background-color:  #1a355b;
+    box-shadow: 1px -3px 1px black;
+    position: relative;
+    top: 5px;
+    left: 5px;
+}
+
+/* --------------------self-introduction-------------------- */
+main.self-intro{
+    max-width: 1200px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+}
+
+.self-intro-col-wrapper{
+    min-height: 450px;
+    border: 2px solid orange;
+    border-radius: 2%;
+    margin: 30px;
+    padding: 30px;
+}
+
+.firstWrap{
+    text-align: center;
+}
+
+#selfie{
+    width: 250px;
+    background-color:orange;
+    border-radius: 50%;
+    margin: auto;
+}
+
+.hobby-list{
+    padding: 0;
+}
+
+.self-intro-text > h4{
+    margin-bottom: 5px;
+}
+
+.self-intro-text > p{
+    margin-top: 0;
+}
+
+/* --------------------travel-------------------- */
+main.gallery {
+display: block;
+text-align: center;
+}
+
+.section {
+max-width: 930px;
+margin: 2rem auto;
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+grid-gap: 5px;
+}
+
+.gallery-item {
+width: 300px;
+height: 300px;
+margin: 10px;
+}
+
+.gallery-item > img{
+    display: inline-block;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    object-fit: cover;
+    border-radius: 5px;
+}
+    
+.gallery-item > a {
+    transition: transform .5s;
+}
+
+.gallery-item:hover{
+    transform: scale(1.2);
+}
+
+.img-popup-back{
+    display: none;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+
+/* --------------------dev_roadmap-------------------- */
+.devRoad-main{
+    min-height: 700px;
+    display: grid;
+    grid-template-columns: 300px 5px 300px 5px 300px 5px 300px;
+    justify-content: space-around;
+    align-items: start;
+}
+
+div[class^='frame-']{
+    text-align: center;
+    min-height: 300px; 
+    min-width: 150px;
+    max-width: 300px;
+    padding: 30px 0;
+    margin: 0 15x ;
+}
+
+.arrow{
+    text-align: center;
+    padding-top: 50px;
+    height: 80%;
+    width: fit-content;
+}
+
+.frame-5{
+    grid-column: 1 / 9;
+    text-align: center;
+}
+
+.unit{
+    text-align: center;
+    border: 2px solid orange;
+    display:block;
+    width: 100%;
+    margin: 1px;
+    border-radius: 5px;
+}
+
+ul.hiddenContent{
+    background-color: rgba(211, 211, 211, 0.235);
+    padding: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 1s ease-out;
+}
+
+.unit:hover .hiddenContent{
+    max-height: 800px;
+    transition: max-height 1s ease-out;
+}
+
+.hiddenContent ul{
+    padding: 0;
+}
+
+.hiddenContent li{
+    font-weight: bold;
+    display: block;
+}
+
+/* --------------------join_member-------------------- */
+form.regForm{
+    width: 55vw;
+    text-align: center;    
+}
+
+.regForm fieldset{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.regForm th{
+    width: 150px;
+}
+
+.regForm td{
+    height: 40px;
+}
+
+.req{
+    color: red;
+}
+
+.caption > td{
+    height: 15px;
+    font-size: 8px;
+    color: red;
+    vertical-align: top;
+}
+
+.agreement-content{
+    text-align: start;
+    width: 70%;
+    height: 300px;
+    overflow-y: scroll;
+    margin: 15px auto;
+}
+
+.btn-container{
+    margin: 30px auto;
+}
+
+.userInfo>table{
+    width: 350px;
+    text-align: left;
+}
+
+/* --------------------login-------------------- */
+.logForm{
+    width: 500px;
+    height: 300px;
+    text-align: center;
+    border: 2px solid orange;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2%;
+}
+
+.logInfo{
+    border: none;
+}
+
+.logInfo > table{
+    display: flex;    
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.findIdPw-text{
+    font-size: small;
+    color:#1a355b;
+}
+
+.findIdPw-text a {
+    text-decoration: underline;
+    color: #1a355b;
+}
+
+
+/* --------------------copyright-------------------- */
+.copyrightPage-container{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    text-align: center;
+}
+
+.copyright-noitce{
+    grid-column: 1 / 4;
+}
+
+.license-wrapper img{
+    width: 300px;
+}
+
+.license-wrapper:hover > a{
+    opacity: 60%;
+}
+
+/* --------------------in_progress-------------------- */
+main.progress-counter{
+    display: grid;
+    grid-template-columns: 1fr;
+    text-align: center;
+    margin-top: 5%;
+}
+
+.progress-counter > img{
+    width: 300px;
+    margin: auto;
+}
+
+
+/* -------------------------발표환경은 1024*768이므로 규격 맞출것.------------------------- */
+/* 너비 1024px이하에서 작동. 그러나 1024보다 더 줄이면 로드맵 배치가 무너집니다... */
+@media(max-width: 1024px){
+    /* --------------------dev_roadmap-------------------- */
+    main.devRoad-main{
+        width: 90%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-self: center;
+        text-align: center;
+        position: relative;
+        left: 5%;
+    }
+    div[class^='frame-']{
+        text-align: center;
+        height: 200px; 
+        width: 200px;
+        padding: 30px 0;
+    }
+   .frame-5{
+       position: relative;
+       bottom: -140px;
+    }
+
+    /* --------------------index.html-------------------- */
+    .main-img-back{
+        width: 300px;
+        height: 300px;
+    }
+
+    #main-img{
+        width: 200px;
+    }
+    .main-greeting{
+        font-size: smaller;
+        width: 400px;
+    }
+    .main-greeting ul{
+        display: flex;
+        justify-content: flex-start;
+    }
+    .main-greeting ul li {
+        width: 100px;
+        height: 100px;
+    }
+}

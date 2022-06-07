@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/join_login.js"></script>    
+</head>
+<body>
+    <!-- 
+        * 회원가입: form태그와 디자인 먼저 구현후, web-storage 학습후 완성할 것.
+        * 회원목록열람
+        * 로그인(선택)
+     -->
+    <header>
+        <nav class="header-left">
+            <a href="index.html">
+                <div id="home-logo"><img id="home" src="../sources/images/icons/free-icon-homepage.png" alt=""></div>
+            </a>    
+            <ul>
+                <li class="main-nav"><a href="self_introduction.html">자기소개</a></li>
+                <li class="main-nav"><a href="travel.html">갤러리</a></li>
+                <li class="main-nav"><a href="dev_roadmap.html">백엔드 로드맵</a></li>
+            </ul>
+        </nav>
+        <nav class="header-right">
+            <ul>
+                <li><a href="join_member.html">회원가입</a></li>
+                <li><a class="now-page" href="login.html">로그인</a></li>
+            </ul>   
+        </nav>
+    </header>
+    <hr>
+     <main>
+         <form action="javascript:console.log('로그인 성공!');" onsubmit="login();" class="logForm">
+            <fieldset class="logInfo">
+                <table>
+                    <tr>
+                        <th>아이디</th>
+                        <td>
+                            <input type="text" id="loginId" name="loginId" placeholder="아이디를 입력하세요." required>
+                       </td>
+                   </tr>           
+                   <tr>
+                       <th>비밀번호</th>
+                       <td>
+                           <input type="password" id="loginPwd" name="loginPwd" placeholder="비밀번호를 입력하세요." required>
+                       </td>
+                   </tr>
+                </table>
+                <button>LogIn</button>
+                <br><br>
+                <span class="findIdPw-text">아이디/비밀번호가 기억나지 않습니다. <a href="in_progress.html">아이디/비밀번호 찾기</a></span>
+            </fieldset>
+         </form>
+     </main>
+     <hr>
+     <footer>
+        <div class="footer-contact"><b>Email</b><br>jinpark.dev22@gmail.com</div>
+        <div class="footer-contact"><b>gitHub</b><br>jin-dev22</div>
+        <div class="footer-author">2022 KH 개인프로젝트 by 수진</div>
+        <div class="footer-copyrightWrapper">
+            <a href="icon_copyright.html">사용이미지 출처: Flaticon :
+                <span class="holders">paulalee / Freepik / wanicon</span>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

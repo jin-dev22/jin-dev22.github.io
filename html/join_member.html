@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <script src="../js/join_login.js"></script>
+    <style>
+       
+    </style>
+</head>
+<body>
+    <!-- 
+        * 회원가입: form태그와 디자인 먼저 구현후, web-storage 학습후 완성할 것.
+        * 회원목록열람
+        * 로그인(선택)
+     -->
+    <header>
+        <nav class="header-left">
+            <a href="index.html">
+                <div id="home-logo"><img id="home" src="../sources/images/icons/free-icon-homepage.png" alt=""></div>
+            </a>    
+            <ul>
+                <li class="main-nav"><a href="self_introduction.html">자기소개</a></li>
+                <li class="main-nav"><a href="travel.html">갤러리</a></li>
+                <li class="main-nav"><a href="dev_roadmap.html">백엔드 로드맵</a></li>
+            </ul>
+        </nav>
+        <nav class="header-right">
+            <ul>
+                <li><a class="now-page" href="join_member.html">회원가입</a></li>
+                <li><a href="login.html">로그인</a></li>
+            </ul>   
+        </nav>
+    </header>
+    <hr>
+     <main>
+         <form action="javascript: alert('가입완료!');" onsubmit="return saveUserIfValid();" class="regForm">
+             <fieldset class="userInfo">
+                 <legend>회원정보</legend>
+                 <table>
+                     <tr>
+                         <th>아이디<span class="req">*</span></th>
+                         <td>
+                             <input type="text" id="userId" name="userId" placeholder="아이디를 입력하세요." required>
+                        </td>
+                    </tr>
+                    <tr class="caption">
+                        <td colspan="2">아이디는 6~12자 이내, 영문/숫자/특수문자(-_)만 사용가능합니다.</td>
+                    </tr>
+                    <tr>
+                        <th>비밀번호<span class="req">*</span></th>
+                        <td>
+                            <input type="password" id="pwd" name="pwd" placeholder="비밀번호를 입력하세요." required>
+                        </td>
+                    </tr>
+                    <tr class="caption">
+                        <td colspan="2">비밀번호는 8~20자 이내, 영문/숫자/특수문자(!@#$%^&*-+ 중 하나이상)를 모두 포함해야 합니다.</td>
+                    </tr>
+                     <tr>
+                         <th>비밀번호 확인<span class="req">*</span></th>
+                         <td>
+                            <input type="password" id="pwdCheck" placeholder="비밀번호를 한번 더 입력하세요." required>
+                         </td>
+                     </tr>
+                     <tr>
+                         <th>이름<span class="req">*</span></th>
+                         <td>
+                            <input type="text" id="userName" name="userName" required>
+                         </td>
+                     </tr>
+                     <tr>
+                         <th>이메일<span class="req">*</span></th>
+                         <td>
+                            <input type="email" id="email" name="email" placeholder="userid@eamil.com" required>
+                         </td>
+                     </tr>
+                     <tr>
+                         <th>생년월일<span class="req">*</span></th>
+                         <td>
+                            <input type="date" name="birthDate" id="birthDate">
+                        </td>
+                     </tr>
+                     <tr>
+                         <th>성별</th>
+                         <td>
+                            <input type="checkbox" id="genderM" name="gender" value="M" onclick="checkOne(this);">
+                            <label for="genderM">남</label>&nbsp;
+                            <input type="checkbox" id="genderF" name="gender" value="F" onclick="checkOne(this);">
+                            <label for="geainInfoN">여</label>
+                         </td>
+                     </tr>
+                 </table>                 
+             </fieldset>
+
+             <fieldset class="agreement">
+                 <legend>회원가입을 위한 개인정보 수집 · 이용 동의서</legend>
+                 <table>
+                     <tr>
+                         <td>
+                            <p class="agreement-content">
+                                개인정보보호법에 따라 회원가입 신청하시는 분으로부터 수집하는 개인정보의 항목, 개인정보의 수집 및 이용목적, 개인정보의 보유 및 이용기간, 동의 거부권 및 동의 거부 시 불이익에 관한 사항을 안내 드리오니 자세히 읽은 후 동의하여 주시기 바랍니다.
+                                <br><br>
+                                1. 수집하는 개인정보
+                                <br>
+                                이용자는 회원가입을 하지 않아도 대부분의 서비스를 회원과 동일하게 이용할 수 있습니다. 이용자가 개인화 혹은 회원제 서비스를 이용하기 위해 회원가입을 할 경우, 당사는 서비스 이용을 위해 필요한 최소한의 개인정보를 수집합니다.
+                                <br>
+                                회원가입 시점에 이용자로부터 수집하는 개인정보는 아래와 같습니다.
+                                <br>
+                                회원 가입 시에 ‘아이디, 비밀번호, 이름’을 필수항목으로 수집합니다. 그리고 선택항목으로 생년월일, 성별정보를 수집합니다.
+                                <br><br>
+                                2. 수집한 개인정보의 이용   
+                                서비스의 회원관리, 서비스 개발・제공 및 향상, 안전한 인터넷 이용환경 구축 등 아래의 목적으로만 개인정보를 이용합니다.
+                                <br>
+                                - 회원 가입 의사의 확인, 연령 확인 및 법정대리인 동의 진행, 이용자 및 법정대리인의 본인 확인, 이용자 식별, 회원탈퇴 의사의 확인 등 회원관리를 위하여 개인정보를 이용합니다.
+                                <br>
+                                - 법령 위반 회원에 대한 이용 제한 조치, 부정 이용 행위를 포함하여 서비스의 원활한 운영에 지장을 주는 행위에 대한 방지 및 제재, 계정도용 및 부정거래 방지, 약관 개정 등의 고지사항 전달, 분쟁조정을 위한 기록 보존, 민원처리 등 이용자 보호 및 서비스 운영을 위하여 개인정보를 이용합니다.
+                                <br><br>
+                                3. 개인정보의 보관기간
+                                <br>
+                                원칙적으로 이용자의 개인정보를 회원 탈퇴 시 지체없이 파기하고 있습니다.
+                                <br>
+                                단, 이용자에게 개인정보 보관기간에 대해 별도의 동의를 얻은 경우, 또는 법령에서 일정 기간 정보보관 의무를 부과하는 경우에는 해당 기간 동안 개인정보를 안전하게 보관합니다.
+                                <br><br>
+                                4. 개인정보 수집 및 이용 동의를 거부할 권리
+                                <br>
+                                이용자는 개인정보의 수집 및 이용 동의를 거부할 권리가 있습니다. 회원가입 시 수집하는 최소한의 개인정보, 즉, 필수 항목에 대한 수집 및 이용 동의를 거부하실 경우, 회원가입이 어려울 수 있습니다.
+                            </p>
+                         </td>
+                     </tr>
+                     <tr>
+                         <td>
+                            <div>회원가입을 위해 개인정보 제공에 동의하시겠습니까?</div>
+                            <input type="radio" id="agreementY" name="agreement" value="Y" onclick="checkOne(this);" checked>
+                            <label for="gaeinInfoY">예</label>&nbsp;
+                            <input type="radio" id="agreementN" name="agreement" value="N" onclick="checkOne(this);">
+                            <label for="geainInfoN">아니오</label>
+                         </td>
+                     </tr>
+                 </table>
+             </fieldset>
+             <div class="btn-container">
+                 <input type="submit" value="가입하기">&nbsp;&nbsp;&nbsp;
+                 <input type="reset" value="초기화">
+             </div>
+         </form>
+     </main>
+     <hr>
+     <footer>
+        <div class="footer-contact"><b>Email</b><br>jinpark.dev22@gmail.com</div>
+        <div class="footer-author">2022 KH 개인프로젝트 by 수진</div>
+        <div class="footer-contact"><b>gitHub</b><br>jin-dev22</div>
+        <div class="footer-copyrightWrapper">
+            <a href="icon_copyright.html">사용이미지 출처: Flaticon :
+                <span class="holders">paulalee / Freepik / wanicon</span>
+            </a>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Progress</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <main class="progress-counter">
+        <img src="../sources/images/icons/inProgress.png" alt="">
+        <h1>아직 페이지를 준비중입니다!</h1>
+        <div><span id="countdown">10</span>초 후 이전 페이지로 이동합니다.</div>
+    </main>
+    <script>
+        window.onload = () => {
+            let seconds = 9;
+            setInterval(()=>{
+                countdown.innerHTML = seconds;
+                seconds--;
+            },1000);
+            const prevPage = document.referrer; 
+            setTimeout(()=>{
+                location.replace(prevPage);
+            },10000)
+        }
+    </script>
+</body>
+</html>
